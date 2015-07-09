@@ -22,6 +22,21 @@
 	margin-left: -1px;
 }
 
+.btnSiguinte{
+	float: right;
+}
+
+.carousel-inner
+{
+	background: #fff;
+}
+
+
+.inputs
+{
+	margin: 50px;
+}
+
 .itemPosition
 {
   float: right;
@@ -98,15 +113,22 @@ h1
 
 section
 {
-	margin-top:185px; 
+	margin-top:85px; 
 	
 }
 
 .sepSlider
 {
 	
-	margin-bottom: 30px;
-	padding-right: 30px;
+	margin-top:40px; 
+
+	
+}
+
+.sepSliderFoto
+{
+	
+	margin-top:25px; 
 
 	
 }
@@ -128,10 +150,18 @@ section
 	cursor:pointer; 
 }
 
-.btn-group>.btn:first-child {
+
+
+.btn-group .btn:first-child {
   margin-left: 0;
   margin-right: 13px;
 }
+.btnsVideos{
+	margin-top: 25px;
+	margin-bottom:10px; 
+}
+
+
 
   
 }

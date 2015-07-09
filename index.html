@@ -14,7 +14,7 @@
 	<nav class="navbar navbar-default navbar-fixed-top navTop">
 	  <div class="container">  
       <div class="row">
-       <div class="progress col-xs-9 col-sm-9 col-md-8 col-lg-7 ">
+       <div class="progress col-xs-8 col-sm-8 col-md-8 col-lg-7 ">
             <div id="total-price-bar" class="progress-bar  " role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
               <span class="sr-only">20% Complete</span>
             </div>
@@ -28,163 +28,119 @@
 	</nav>
 	
     
-        <div class="container secFontSize">
-        <section>
-         <h2>Selecciona tu equipo</h2>
-         <div class="row">
-            <div class="topBtn col-xs-11 col-sm-11 col-md-12 col-lg-12">
-            <div class="row ">
-             	<button type="button" class="btn btn-default  btnDevice ">TELEFONO  </button>
-             	<button type="button" class="btn btn-default  btnDevice ">TABLETA </button>
-             	<button type="button" class="btn btn-default  btnDevice ">HOTSPOT  </button>
+   <div class="container secFontSize">
+     <section>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+          <div class="inputs">
+            <div class="row">
+              <div class="col-xs-6 col-sm-7 col-md-5 col-lg-4">
+               <h2>¿Cuantas fotos subes o descargas?</h2>
               </div>
             </div>
+              <div class="row">
+               <div class="col-xs-6 col-sm-7 col-md-7 col-lg-6">
+               <div class="sepSliderFoto">
+                 <input type="hidden" class="photo-slider" id="photo-slide" value="10">
+               </div>
+              </div>
+              <div class="col-xs-6 col-sm-5 col-md-5 col-lg-6">
+              <div class="radio">
+                <label><input type="radio" name="optradio">Por dia</label>
+                </div>
+                <div class="radio">
+                <label><input type="radio" name="optradio">Por Mes</label>
+                </div>
+                <div class="radio">
+                <label><input type="radio" name="optradio">Por año</label>
+                </div>    
+              </div>
+              </div>
+             <div class="row">
+               <h2>¿Cuantos videos ves en esta red?</h2>
+               <div class="row col-xs-12 col-sm-9 col-md-7 col-lg-7 ">
+                 <input type="hidden" class="video-slider" id="video-slide" value="10">
+               </div>
+               </div>
+               <div class="row btnsVideos">
+               <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+               <button type="button" class="btn btn-primary ">Por dia</button>
+               </div>
+               <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+               <button type="button" class="btn btn-primary ">Por mes</button>
+               </div>
+               <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+               <button type="button" class="btn btn-primary ">Por año</button>
+               </div>
+               </div>
+             
+             <div class="row">
+               <h2>¿Cuantas canciones descargas?</h2>
+                <div class="row">
+                  <div class="col-xs-8 col-sm-7 col-md-7 col-lg-7">
+                   <div class="sepSlider">
+                     <input type="hidden" class="song-slider" id="song-slide" value="10">
+                   </div>
+                  </div>
+                  <div class="col-xs-4 col-sm-5 col-md-5 col-lg-5 ">
+                      <div class="radio">
+                      <label><input type="radio" name="optradio">Por dia</label>
+                      </div>
+                      <div class="radio">
+                      <label><input type="radio" name="optradio">Por Mes</label>
+                      </div>
+                      <div class="radio">
+                      <label><input type="radio" name="optradio">Por año</label>
+                      </div>
+                  </div>
+                </div>
+             </div>
+
           </div>
-         <h2>Estima tu uso</h2>
-       
-       <div class="row">
-         <div class="col-xs-12 col-sm-12 col-md-6 sepSlider">
-         <p >¿Cuantas fotos subes o descargas?</p>
-         <input type="hidden" class="photo-slider" id="photo-slide" value="5"/>
-         <div class="row">
-         <div class="btn-group" >
-         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Por dia <span class="caret"></span>
-         </button>
-         <ul class="dropdown-menu">
-             <li><a  >Por dia</a></li>
-             <li><a href="#">Por semana</a></li>
-             <li><a href="#">Por mes</a></li>
-        </ul>
-        </div>
-        <p class="itemPosition itemPhoto"></p>
-        </div>
+          </div>
+          <div class="item">
+          <div class="inputs">
+            <input type="hidden" class="documents-slider" id="documents-slide" value="10" />
+            </div>
+          </div>
 
-
-         </div>
-
-         <div class="col-xs-12 col-sm-12 col-md-6 sepSlider">
-         <p>¿Cuantas canciones descargas?</p>
-         <input type="hidden" class="song-slider" id="song-slide" value="2" />
-         <div class="row">
-         <div class="btn-group" >
-       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Por dia <span class="caret"></span>
-       </button>
-         <ul class="dropdown-menu">
-             <li><a href="#">Por dia</a></li>
-             <li><a href="#">Por semana</a></li>
-             <li><a href="#">Por mes</a></li>
-        </ul>
-     </div>
-      <p class="itemPosition itemSong"></p>
-     </div>
-         </div>
-         </div>
-
-         <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-6 sepSlider">
-         <p>¿Cuantos videos ves en esta red y con que frecuencia?</p>
-         <input type="hidden" class="video-slider" id="video-slide" value="5" />
-         <div class="row">
-         <div class="btn-group" >
-       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Por dia <span class="caret"></span>
-       </button>
-         <ul class="dropdown-menu">
-             <li><a href="#">Por dia</a></li>
-             <li><a href="#">Por semana</a></li>
-             <li><a href="#">Por mes</a></li>
-        </ul>
-     </div>
-         <p class="itemPosition itemVideo"></p>
-     </div>
-         </div>
-
-          <div class="col-xs-12 col-sm-12 col-md-6 sepSlider">
-         <p>¿Cuanto tiempo pasas navegando en internet?</p>
-         <input type="hidden" class="internet-slider" id="internet-slide" value="30" />
-         <div class="row">
-         <div class="btn-group" >
-       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Por dia <span class="caret"></span>
-       </button>
-         <ul class="dropdown-menu">
-             <li><a href="#">Por dia</a></li>
-             <li><a href="#">Por semana</a></li>
-             <li><a href="#">Por mes</a></li>
-        </ul>
-     </div>
-         <p class="itemPosition itemInternet"></p>
-     </div>
-         </div>
-         </div>
-
-         <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-6 sepSlider">
-         <p>¿Cuantas aplicaciones descargas y con que frecuencia?</p>
-         <input type="hidden" class="aplication-slider" id="aplication-slide" value="3" />
-         <div class="row">
-         <div class="btn-group" >
-       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Por dia <span class="caret"></span>
-       </button>
-         <ul class="dropdown-menu">
-             <li><a href="#">Por dia</a></li>
-             <li><a href="#">Por semana</a></li>
-             <li><a href="#">Por mes</a></li>
-        </ul>
-     </div>
-      <p class="itemPosition itemAplication"></p>
-     </div>
-         </div>
-
-          <div class="col-xs-12 col-sm-12 col-md-6 sepSlider">
-         <p>¿Cuantos correos envias o recibes diariamente?</p>
-         <input type="hidden" class="email-slider" id="email-slide" value="10" />
-         <div class="row">
-         <div class="btn-group" >
-       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Por dia <span class="caret"></span>
-       </button>
-         <ul class="dropdown-menu">
-             <li><a href="#">Por dia</a></li>
-             <li><a href="#">Por semana</a></li>
-             <li><a href="#">Por mes</a></li>
-        </ul>
-     </div>
-      <p class="itemPosition itemEmail"></p>
-     </div>
-     </div>
-         </div>
-        
+          <div class="item">
+          <div class="inputs">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
          
-         <div class="row ">
-          <div class="col-xs-12 col-sm-12 col-md-6 sepSlider">
-         <p>¿Con que frecuencia bajas documentos desde tu dispositivo?</p>
-         <input type="hidden" class="documents-slider" id="documents-slide" value="10" />
-         <div class="row">
-         <div class="btn-group" >
-       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Por dia <span class="caret"></span>
-       </button>
-         <ul class="dropdown-menu">
-             <li><a href="#">Por dia</a></li>
-             <li><a href="#">Por semana</a></li>
-             <li><a href="#">Por mes</a></li>
-        </ul>
-     </div>
-     <p class="itemPosition itemDocuments"></p>
-     </div>
-     </div>
-     </div>
-      </section>
-      <button class="btnSiguiente"><a href=""></a></button>
-      </div>
+          </div>
+        </div>
+
+        <a class="btnAnterior" href="#carousel-example-generic" role="button" data-slide="prev"> 
+         <button class="btn btn-primary">Anterior</button>
+        </a>
 
 
-      
-    
+        <a class="btnSiguiente" href="#carousel-example-generic" role="button" data-slide="next"> 
+         <button class="btn btn-primary">Siguiente</button>
+        </a>
+              
+    </section>
+  </div>
+
+
+
 
    
   
