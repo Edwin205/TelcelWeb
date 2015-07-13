@@ -119,27 +119,7 @@ $(document).ready(function(){
     document.getElementById("total-price-bar").style.width = porcentBar + "%";
 
 
-  var itemPhoto = document.getElementById("photo-slide").value;
-  var itemSong = document.getElementById("song-slide").value;
-  var itemVideo =  document.getElementById("video-slide").value;
-  var itemInternet =  document.getElementById("internet-slide").value;
-  var itemAplication =  document.getElementById("aplication-slide").value;
-  var itemEmail = document.getElementById("email-slide").value;
-  var itemDocuments = document.getElementById("documents-slide").value;
-
-
-  document.querySelector('.itemPhoto').innerHTML = itemPhoto.bold() + " Fotos";
-  document.querySelector('.itemSong').innerHTML = itemSong.bold() + " Canciones";
-  document.querySelector(".itemVideo").innerHTML = itemVideo.bold() + " Videos";
-  document.querySelector(".itemInternet").innerHTML = itemInternet.bold() + "Minutos";
-  document.querySelector(".itemAplication").innerHTML = itemAplication.bold() + " Aplicaiones";
-  document.querySelector(".itemEmail").innerHTML = itemEmail.bold() + " Mails";
-  document.querySelector(".itemDocuments").innerHTML = itemDocuments.bold() + " Documentos";
  
-
-  
-
-
 
     if(totalMBValue<=20001)
     document.querySelector('.cantidadTotal').innerHTML = Math.round(totalMBValue)+" MB/mo";
