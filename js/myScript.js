@@ -104,10 +104,10 @@ $(document).ready(function(){
   var photoMB = document.getElementById("photo-slide").value * .819;
   var songMB = document.getElementById("song-slide").value * 7;
   var videoMb = document.getElementById("video-slide").value * 8;
-  var internetMb = document.getElementById("internet-slide").value *1.45;
-  var aplicationMb =  document.getElementById("aplication-slide").value * 5;
-  var emailMb = document.getElementById("email-slide").value * .249;
-  var documentsMb =  document.getElementById("documents-slide").value*4;
+  var internetMb = 0;
+  var aplicationMb =  0;
+  var emailMb = 0;
+  var documentsMb =0;
 
   moveBar();
 
@@ -131,4 +131,47 @@ $(document).ready(function(){
 
 });
 
-    
+function Usuario(){
+  this.id;
+  this.nombre = "Usuario";
+  this.total;
+}
+
+/******************************************************
+******************************************************
+******************************************************
+******************************************************/
+
+var telcelApp = angular.module('telcel',[]);
+
+telcelApp.controller('calculadoraDatos', ['$scope', '$http', function($scope, $http) {
+    $scope.valor = 2;
+    $scope.userSelected = 0;
+
+    $scope.usuarios = [];
+
+    var userDefault = new Usuario();
+    userDefault.nombre = "Mi usuario";
+    userDefault.id = 0;
+
+    $scope.usuarios.push(userDefault);
+
+    $scope.nuevo = function(){
+      var nuevoUsuario = new Usuario();
+      nuevoUsuario.id = $scope.usuarios.length;      
+      $scope.usuarios.push(nuevoUsuario);
+    };
+
+    $scope.seleccionarOtro = function(_id){
+      $scope.userSelected = _id;
+      var x = 0;
+      for (var i = $scope.usuarios.length - 1; i >= 0; i--) {
+        x += $scope.usuarios[i].id;
+
+        console.log($scope.usuarios[i], x);
+      };
+
+    };
+}]);
+
+

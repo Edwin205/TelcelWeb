@@ -43,6 +43,15 @@ background-color:#b5b7b8;
 	margin: 50px;
 }
 
+.inputEmail{
+	margin-bottom: 297px;
+}
+
+.internetInput{
+	margin-left:10px;
+	margin-bottom: 379px;  
+}
+
 .itemPosition
 {
   float: right;
@@ -158,7 +167,7 @@ section
 }
 
 .sitioTelcel{
-	margin-top:60px; 
+	margin-top:48px; 
 }
 
 .slider-container .back-bar {
@@ -180,6 +189,10 @@ section
 .btnsVideos{
 	margin-top: 25px;
 	margin-bottom:10px; 
+}
+
+.inps{
+	margin: 50px;
 }
 
 

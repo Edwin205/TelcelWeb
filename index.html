@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="telcel">
 	<head>
 	    <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="js/jquery.range.css">
         <link rel="stylesheet" href="style.css">
 	</head>	
-	<body>
+	<body ng-controller="calculadoraDatos">
 
 	<nav class="navbar navbar-default navbar-fixed-top navTop">
 	  <div class="container">  
@@ -20,16 +20,21 @@
             </div>
           </div>
              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-4">
-               <button type="button" class="btn btn-primary planIdeal">Plan ideal</button>
+               <button type="button" class="btn btn-primary planIdeal">Plan ideal {{userSelected}}</button>
              </div>
           </div>
 	  <p>Uso estimado mensualmente: <b class="cantidadTotal"></b></p>
 	  </div>
+    <div class="row">
+        <button type="button" class="btn btn-primary planIdeal" ng-repeat="usuario in usuarios" ng-click="seleccionarOtro(usuario.id);">{{usuario.nombre + ' ' +usuario.id}}</button>
+      <button type="button" class="btn btn-primary planIdeal" ng-click="nuevo()">Agreguar usuario</button>
+
+    </div>
 	</nav>
 	
     
    <div class="container secFontSize">
-     <section>
+     <section ng-repeat="usuario in usuarios" ng-show="usuario.id == userSelected">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -104,11 +109,10 @@
                   </div>
                 </div>
              </div>
-
           </div>
           </div>
           <div class="item">
-          <div class="inputs">
+          <div class="inps">
             <h2>¿Cuanta aplicaciones descargas y con que frecuencia?</h2>
              <input type="hidden" class="aplication-slider" id="aplication-slide" value="10">
 
@@ -116,36 +120,34 @@
              <input type="hidden" class="documents-slider" id="documents-slide" value="10">
 
              <h2>¿Cuantos correos envias diariamente?</h2>
+             <div class="inputEmail">
              <input type="hidden" class="email-slider" id="email-slide" value="10">
+             </div>
           </div>
           </div>
 
           <div class="item">
           <div class="inputs">
-            <h2>Cuanto tiempo pasas navegando en internet?</h2>
+          <h2>Cuanto tiempo pasas navegando en internet?</h2>
+          </div>
+          <div class="internetInput col-xs-10 col-sm-10 col-md-7 col-lg-7">
             <input type="hidden" class="internet-slider" id="internet-slide" value="10">
           </div>
           </div>
          
           </div>
-        </div>
 
-        <a class="btnAnterior" href="#carousel-example-generic" role="button" data-slide="prev"> 
+           <a class="btnAnterior" href="#carousel-example-generic" role="button" data-slide="prev"> 
          <button class="btn btn-primary">Anterior</button>
         </a>
-
 
         <a class="btnSiguiente" href="#carousel-example-generic" role="button" data-slide="next"> 
          <button class="btn btn-primary">Siguiente</button>
         </a>
-              
+        </div>     
     </section>
   </div>
 
-
-
-
-   
   
     <footer>
     <nav class="navbar navbar-default navbar-static-bottom navFoot">
@@ -180,13 +182,16 @@
           </div>
           </div>
           <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 sitioTelcel">
+            <div class="col-xs-4 col-sm-6 col-md-6 sitioTelcel">
                 <p>www.telcel.com</p>
             </div>
-            <img class="col-xs-6 col-sm-6 col-md-6 logoTelcel" src="telcelLogo.png">
+            <img class="col-xs-8 col-sm-6 col-md-6 logoTelcel" src="telcelLogo.png">
+
           </div>
     </nav>
     </footer>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"> </script> 
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"> </script>
 	<!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
