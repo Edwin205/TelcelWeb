@@ -1,5 +1,5 @@
 body{
-background-color:#b5b7b8;
+background-color:#fff;
 }
 
 .btnSiguiente{
@@ -33,7 +33,17 @@ background-color:#b5b7b8;
 .carousel-inner
 {
 	background: #fff;
-	background-color:#b5b7b8;
+	background-color:#fff;
+	
+}
+
+.carousel-indicators li{
+	background-color:#aeaeae; 
+	border:#aeaeae;
+}
+
+.carousel-indicators .active{
+	background-color:#2b84d5; 
 	
 }
 

@@ -1,7 +1,8 @@
    
 $(document).ready(function(){
   
-  $('.photo-slider').jRange({
+  /*************Usuario0*****************************/
+  $('#photo-slide0').jRange({
     from: 0,
     to: 10,
     step: 1,
@@ -15,7 +16,7 @@ $(document).ready(function(){
     }
     });
 
-  $('.song-slider').jRange({
+  $('#song-slide0').jRange({
     from: 0,
     to: 10,
     step: 1,
@@ -29,7 +30,7 @@ $(document).ready(function(){
     }
   });
 
-  $('.video-slider').jRange({
+  $('#video-slide0').jRange({
   from: 0,
   to: 90,
   step: 1,
@@ -43,7 +44,7 @@ $(document).ready(function(){
     }
   });
 
-  $('.internet-slider').jRange({
+  $('#internet-slide0').jRange({
   from: 0,
   to: 100,
   step: 1,
@@ -57,7 +58,7 @@ $(document).ready(function(){
     }
    });
 
-  $('.aplication-slider').jRange({
+  $('#aplication-slide0').jRange({
   from: 0,
   to: 30,
   step: 1,
@@ -71,7 +72,7 @@ $(document).ready(function(){
     }
   });
 
-  $('.email-slider').jRange({
+  $('#email-slide0').jRange({
   from: 0,
   to: 100,
   step: 1,
@@ -85,7 +86,7 @@ $(document).ready(function(){
     }
   });
 
-  $('.documents-slider').jRange({
+  $('#documents-slide0').jRange({
   from: 0,
   to: 20,
   step: 1,
@@ -100,10 +101,12 @@ $(document).ready(function(){
 
   });
 
+  
 
-  var photoMB = document.getElementById("photo-slide").value * .819;
-  var songMB = document.getElementById("song-slide").value * 7;
-  var videoMb = document.getElementById("video-slide").value * 8;
+
+  var photoMB = document.getElementById("photo-slide0").value * .819;
+  var songMB = document.getElementById("song-slide0").value * 7;
+  var videoMb = document.getElementById("video-slide0").value * 8;
   var internetMb = 0;
   var aplicationMb =  0;
   var emailMb = 0;
@@ -129,13 +132,127 @@ $(document).ready(function(){
 
   }
 
+
 });
+
+   var usuarioLenght =0;
+
+   function crear(){
+    if(usuarioLenght<6){
+  $('#photo-slide'+usuarioLenght).jRange({
+    from: 0,
+    to: 10,
+    step: 1,
+    scale: [0,10],
+    format: '%s',
+    width: "auto",
+    showLabels: true,
+    onstatechange:function(value){
+     
+    }
+    });
+
+  $('#song-slide'+usuarioLenght).jRange({
+    from: 0,
+    to: 10,
+    step: 1,
+    scale: [0,10],
+    format: '%s',
+    width: "auto",
+    showLabels: false,
+    onstatechange:function(value){
+      
+    }
+  });
+
+  $('#video-slide'+usuarioLenght).jRange({
+  from: 0,
+  to: 90,
+  step: 1,
+  scale: [0,90],
+  format: '%s',
+  width: "auto",
+  showLabels: false,
+    onstatechange:function(value){
+    
+    }
+  });
+
+  $('#internet-slide'+usuarioLenght).jRange({
+  from: 0,
+  to: 100,
+  step: 1,
+  scale: [0,100],
+  format: '%s',
+  width: "auto",
+  showLabels: false,
+    onstatechange:function(value){
+      
+    }
+   });
+
+  $('#aplication-slide'+usuarioLenght).jRange({
+  from: 0,
+  to: 30,
+  step: 1,
+  scale: [0,30],
+  format: '%s',
+  width: "auto",
+  showLabels: false,
+   onstatechange:function(value){
+      
+    }
+  });
+
+  $('#email-slide'+usuarioLenght).jRange({
+  from: 0,
+  to: 100,
+  step: 1,
+  scale: [0,100],
+  format: '%s',
+  width: "auto",
+  showLabels: false, 
+   onstatechange:function(value){
+      
+    }
+  });
+
+  $('#documents-slide'+usuarioLenght).jRange({
+  from: 0,
+  to: 20,
+  step: 1,
+  scale: [0,20],
+  format: '%s',
+  width: "auto",
+  showLabels: true,
+  onstatechange:function(value){
+          }
+
+  });
+  }
+}
+
+
+function aumentar(){
+  $("#nuevo").trigger('click');
+}
+
+function uAumenta(){
+  if(usuarioLenght<6){
+  usuarioLenght+=1;
+  }
+
+  console.log(usuarioLenght);
+}
 
 function Usuario(){
   this.id;
   this.nombre = "Usuario";
-  this.total;
 }
+
+var usuarioLenght;
+
+
 
 /******************************************************
 ******************************************************
@@ -149,6 +266,7 @@ telcelApp.controller('calculadoraDatos', ['$scope', '$http', function($scope, $h
     $scope.userSelected = 0;
 
     $scope.usuarios = [];
+    usuarioLenght = $scope.usuarios.length;
 
     var userDefault = new Usuario();
     userDefault.nombre = "Mi usuario";
@@ -157,9 +275,13 @@ telcelApp.controller('calculadoraDatos', ['$scope', '$http', function($scope, $h
     $scope.usuarios.push(userDefault);
 
     $scope.nuevo = function(){
+      if($scope.usuarios.length<6){
       var nuevoUsuario = new Usuario();
       nuevoUsuario.id = $scope.usuarios.length;      
       $scope.usuarios.push(nuevoUsuario);
+    }
+      else
+        alert("Solo se puede agregar un maximo de 6 usuarios");
     };
 
     $scope.seleccionarOtro = function(_id){
@@ -168,10 +290,10 @@ telcelApp.controller('calculadoraDatos', ['$scope', '$http', function($scope, $h
       for (var i = $scope.usuarios.length - 1; i >= 0; i--) {
         x += $scope.usuarios[i].id;
 
-        console.log($scope.usuarios[i], x);
       };
 
     };
+
 }]);
 
 

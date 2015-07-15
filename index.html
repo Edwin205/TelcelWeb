@@ -19,15 +19,16 @@
               <span class="sr-only">20% Complete</span>
             </div>
           </div>
-             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-4">
-               <button type="button" class="btn btn-primary planIdeal">Plan ideal {{userSelected}}</button>
+             <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+               <button type="button" class="btn btn-primary planIdeal">Plan ideal</button>
              </div>
+             <p class="col-md-2 col-lg-2">Usuario:{{userSelected}}</p>
           </div>
 	  <p>Uso estimado mensualmente: <b class="cantidadTotal"></b></p>
 	  </div>
     <div class="row">
-        <button type="button" class="btn btn-primary planIdeal" ng-repeat="usuario in usuarios" ng-click="seleccionarOtro(usuario.id);">{{usuario.nombre + ' ' +usuario.id}}</button>
-      <button type="button" class="btn btn-primary planIdeal" ng-click="nuevo()">Agreguar usuario</button>
+        <button type="button" id="#nuevo" class="btn btn-primary planIdeal" onclick="crear();" ng-repeat="usuario in usuarios" ng-click="seleccionarOtro(usuario.id);">{{usuario.nombre + ' ' +usuario.id}}</button>
+      <button type="button" id="#agregar" class="btn btn-primary planIdeal" onclick="uAumenta();" ng-click="nuevo();">Agregar usuario</button>
 
     </div>
 	</nav>
@@ -35,12 +36,12 @@
     
    <div class="container secFontSize">
      <section ng-repeat="usuario in usuarios" ng-show="usuario.id == userSelected">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div id="carousel-example-generic{{usuario.id}}" class="carousel slide" data-ride="carousel" data-interval="false">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic{{usuario.id}} " data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic{{usuario.id}} " data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic{{usuario.id}} " data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -55,7 +56,7 @@
               <div class="row">
                <div class="col-xs-6 col-sm-7 col-md-7 col-lg-6">
                <div class="sepSliderFoto">
-                 <input type="hidden" class="photo-slider" id="photo-slide" value="10">
+                 <input type="hidden"  id="photo-slide{{usuario.id}}" value="10">
                </div>
               </div>
               <div class="col-xs-6 col-sm-5 col-md-5 col-lg-6">
@@ -73,7 +74,7 @@
              <div class="row">
                <h2>¿Cuantos videos ves en esta red?</h2>
                <div class="row col-xs-12 col-sm-9 col-md-7 col-lg-7 ">
-                 <input type="hidden" class="video-slider" id="video-slide" value="10">
+                 <input type="hidden"  id="video-slide{{usuario.id}}" value="10">
                </div>
                </div>
                <div class="row btnsVideos">
@@ -93,7 +94,7 @@
                 <div class="row">
                   <div class="col-xs-8 col-sm-7 col-md-7 col-lg-7">
                    <div class="sepSlider">
-                     <input type="hidden" class="song-slider" id="song-slide" value="10">
+                     <input type="hidden"  id="song-slide{{usuario.id}}" value="10">
                    </div>
                   </div>
                   <div class="col-xs-4 col-sm-5 col-md-5 col-lg-5 ">
@@ -114,14 +115,14 @@
           <div class="item">
           <div class="inps">
             <h2>¿Cuanta aplicaciones descargas y con que frecuencia?</h2>
-             <input type="hidden" class="aplication-slider" id="aplication-slide" value="10">
+             <input type="hidden"  id="aplication-slide{{usuario.id}}" value="10">
 
               <h2>¿Con que frecuencia bajas documentos desde tu dispositivo?</h2>
-             <input type="hidden" class="documents-slider" id="documents-slide" value="10">
+             <input type="hidden"  id="documents-slide{{usuario.id}}" value="10">
 
              <h2>¿Cuantos correos envias diariamente?</h2>
              <div class="inputEmail">
-             <input type="hidden" class="email-slider" id="email-slide" value="10">
+             <input type="hidden"  id="email-slide{{usuario.id}}" value="10">
              </div>
           </div>
           </div>
@@ -131,17 +132,17 @@
           <h2>Cuanto tiempo pasas navegando en internet?</h2>
           </div>
           <div class="internetInput col-xs-10 col-sm-10 col-md-7 col-lg-7">
-            <input type="hidden" class="internet-slider" id="internet-slide" value="10">
+           <input type="hidden" class="internet-slider" id="internet-slide{{usuario.id}}" value="10">
           </div>
           </div>
          
           </div>
 
-           <a class="btnAnterior" href="#carousel-example-generic" role="button" data-slide="prev"> 
+           <a class="btnAnterior" href="#carousel-example-generic{{usuario.id}}" role="button" data-slide="prev"> 
          <button class="btn btn-primary">Anterior</button>
         </a>
 
-        <a class="btnSiguiente" href="#carousel-example-generic" role="button" data-slide="next"> 
+        <a class="btnSiguiente" href="#carousel-example-generic{{usuario.id}}" role="button" data-slide="next"> 
          <button class="btn btn-primary">Siguiente</button>
         </a>
         </div>     
