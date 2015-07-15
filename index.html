@@ -20,15 +20,15 @@
             </div>
           </div>
              <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
-               <button type="button" class="btn btn-primary planIdeal">Plan ideal</button>
+               <button type="button" class="btn btn-primary planIdeal" ng-click="showme=true">Plan ideal</button>
              </div>
-             <p class="col-md-2 col-lg-2">Usuario:{{userSelected}}</p>
+             <p  class="col-md-2 col-lg-2">Usuario:{{userSelected}}</p>
           </div>
 	  <p>Uso estimado mensualmente: <b class="cantidadTotal"></b></p>
 	  </div>
     <div class="row">
         <button type="button" id="#nuevo" class="btn btn-primary planIdeal" onclick="crear();" ng-repeat="usuario in usuarios" ng-click="seleccionarOtro(usuario.id);">{{usuario.nombre + ' ' +usuario.id}}</button>
-      <button type="button" id="#agregar" class="btn btn-primary planIdeal" onclick="uAumenta();" ng-click="nuevo();">Agregar usuario</button>
+      <button type="button" id="#agregar" class="btn btn-primary planIdeal"  ng-click="nuevo();" onclick="crear(); uAumenta();">Agregar usuario</button>
 
     </div>
 	</nav>
@@ -138,14 +138,14 @@
          
           </div>
 
-           <a class="btnAnterior" href="#carousel-example-generic{{usuario.id}}" role="button" data-slide="prev"> 
+           <a class="btnAnterior" href="#carousel-example-generic{{usuario.id}}" role="button" data-slide="prev" > 
          <button class="btn btn-primary">Anterior</button>
         </a>
 
-        <a class="btnSiguiente" href="#carousel-example-generic{{usuario.id}}" role="button" data-slide="next"> 
-         <button class="btn btn-primary">Siguiente</button>
+        <a class="btnSiguiente" href="#carousel-example-generic{{usuario.id}}" role="button" data-slide="next" > 
+         <button class="btn btn-primary" >Siguiente</button>
         </a>
-        </div>     
+        </div>  
     </section>
   </div>
 

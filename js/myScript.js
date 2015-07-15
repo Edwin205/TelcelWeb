@@ -146,7 +146,7 @@ $(document).ready(function(){
     scale: [0,10],
     format: '%s',
     width: "auto",
-    showLabels: true,
+    showLabels: false,
     onstatechange:function(value){
      
     }
@@ -224,18 +224,17 @@ $(document).ready(function(){
   scale: [0,20],
   format: '%s',
   width: "auto",
-  showLabels: true,
+  showLabels: false,
   onstatechange:function(value){
           }
 
   });
   }
+  console.log("Si entro");
 }
 
 
-function aumentar(){
-  $("#nuevo").trigger('click');
-}
+
 
 function uAumenta(){
   if(usuarioLenght<6){
@@ -261,6 +260,8 @@ var usuarioLenght;
 
 var telcelApp = angular.module('telcel',[]);
 
+
+
 telcelApp.controller('calculadoraDatos', ['$scope', '$http', function($scope, $http) {
     $scope.valor = 2;
     $scope.userSelected = 0;
@@ -274,26 +275,34 @@ telcelApp.controller('calculadoraDatos', ['$scope', '$http', function($scope, $h
 
     $scope.usuarios.push(userDefault);
 
+  
+
     $scope.nuevo = function(){
       if($scope.usuarios.length<6){
       var nuevoUsuario = new Usuario();
       nuevoUsuario.id = $scope.usuarios.length;      
       $scope.usuarios.push(nuevoUsuario);
+
     }
       else
         alert("Solo se puede agregar un maximo de 6 usuarios");
     };
+
+   
+  
 
     $scope.seleccionarOtro = function(_id){
       $scope.userSelected = _id;
       var x = 0;
       for (var i = $scope.usuarios.length - 1; i >= 0; i--) {
         x += $scope.usuarios[i].id;
-
-      };
+    
+      }
 
     };
 
+
+    
 }]);
 
 
