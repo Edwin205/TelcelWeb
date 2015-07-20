@@ -153,7 +153,7 @@ function sliders(){
 
   $('#video-slide'+user).slider({
     slide:function(event,ui){
-      videoMb1 = ui.value *18;
+      videoMb1 = ui.value *8;
       moveBar();
     }
   });
