@@ -6,7 +6,7 @@
 		<title></title>
 		<!-- Bootstrap Core CSS -->
         <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="js/jquery.range.css">
+        <link rel="stylesheet" href="jquery-ui.css">
         <link rel="stylesheet" href="style.css">
 	</head>	
 	<body ng-controller="calculadoraDatos">
@@ -20,22 +20,24 @@
             </div>
           </div>
              <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
-               <button type="button" class="btn btn-primary planIdeal" ng-click="showme=true">Plan ideal</button>
+               <button type="button" class="btn btn-primary planIdeal" >Plan ideal</button>
              </div>
              <p  class="col-md-2 col-lg-2">Usuario:{{userSelected}}</p>
           </div>
 	  <p>Uso estimado mensualmente: <b class="cantidadTotal"></b></p>
 	  </div>
-    <div class="row">
-        <button type="button" id="#nuevo" class="btn btn-primary planIdeal" onclick="crear();" ng-repeat="usuario in usuarios" ng-click="seleccionarOtro(usuario.id);">{{usuario.nombre + ' ' +usuario.id}}</button>
-      <button type="button" id="#agregar" class="btn btn-primary planIdeal"  ng-click="nuevo();" onclick="crear(); uAumenta();">Agregar usuario</button>
+    <div class="row topBtns">
+       
+        <button type="button" id="nuevo{{usuario.id}}" class="btn btn-primary btnUsers"  ng-repeat="usuario in usuarios"  ng-click="seleccionarOtro(usuario.id);">{{usuario.nombre}}</button>
+
+      <button type="button" id="agregar" class="btn btn-primary " ng-click="nuevo(); " onclick="uAumenta(); crear(); ">Agregar usuario</button>
 
     </div>
 	</nav>
-	
+	 
     
    <div class="container secFontSize">
-     <section ng-repeat="usuario in usuarios" ng-show="usuario.id == userSelected">
+       <section ng-repeat="usuario in usuarios" ng-show="usuario.id == userSelected" >
         <div id="carousel-example-generic{{usuario.id}}" class="carousel slide" data-ride="carousel" data-interval="false">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -56,12 +58,12 @@
               <div class="row">
                <div class="col-xs-6 col-sm-7 col-md-7 col-lg-6">
                <div class="sepSliderFoto">
-                 <input type="hidden"  id="photo-slide{{usuario.id}}" value="10">
+                 <div id="photo-slide{{usuario.id}}"></div>
                </div>
               </div>
               <div class="col-xs-6 col-sm-5 col-md-5 col-lg-6">
               <div class="radio">
-                <label><input type="radio" name="optradio">Por dia</label>
+                <label><input type="radio" onclick="porDia();" name="optradio">Por dia</label>
                 </div>
                 <div class="radio">
                 <label><input type="radio" name="optradio">Por Mes</label>
@@ -74,7 +76,7 @@
              <div class="row">
                <h2>¿Cuantos videos ves en esta red?</h2>
                <div class="row col-xs-12 col-sm-9 col-md-7 col-lg-7 ">
-                 <input type="hidden"  id="video-slide{{usuario.id}}" value="10">
+                 <div id="video-slide{{usuario.id}}"></div>
                </div>
                </div>
                <div class="row btnsVideos">
@@ -94,7 +96,7 @@
                 <div class="row">
                   <div class="col-xs-8 col-sm-7 col-md-7 col-lg-7">
                    <div class="sepSlider">
-                     <input type="hidden"  id="song-slide{{usuario.id}}" value="10">
+                     <div id="song-slide{{usuario.id}}"></div>
                    </div>
                   </div>
                   <div class="col-xs-4 col-sm-5 col-md-5 col-lg-5 ">
@@ -115,15 +117,16 @@
           <div class="item">
           <div class="inps">
             <h2>¿Cuanta aplicaciones descargas y con que frecuencia?</h2>
-             <input type="hidden"  id="aplication-slide{{usuario.id}}" value="10">
+             <div id="aplication-slide{{usuario.id}}"></div>
 
               <h2>¿Con que frecuencia bajas documentos desde tu dispositivo?</h2>
-             <input type="hidden"  id="documents-slide{{usuario.id}}" value="10">
+             <div id="documents-slide{{usuario.id}}"></div>
 
              <h2>¿Cuantos correos envias diariamente?</h2>
              <div class="inputEmail">
-             <input type="hidden"  id="email-slide{{usuario.id}}" value="10">
+             <div id="email-slide{{usuario.id}}"></div>
              </div>
+            
           </div>
           </div>
 
@@ -132,7 +135,7 @@
           <h2>Cuanto tiempo pasas navegando en internet?</h2>
           </div>
           <div class="internetInput col-xs-10 col-sm-10 col-md-7 col-lg-7">
-           <input type="hidden" class="internet-slider" id="internet-slide{{usuario.id}}" value="10">
+           <div class="internet-slider" id="internet-slide{{usuario.id}}"></div>
           </div>
           </div>
          
@@ -193,10 +196,10 @@
     </footer>
 
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"> </script> 
-	<script src="https://code.jquery.com/jquery-1.11.3.min.js"> </script>
+	 <script src="https://code.jquery.com/jquery-1.11.3.min.js"> </script>
 	<!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.range.js"></script>
+    <script src="jquery-ui.js"></script>
     <script src="js/myScript.js"></script>
 	</body>	
 </html>

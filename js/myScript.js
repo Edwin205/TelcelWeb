@@ -1,255 +1,310 @@
-   
-$(document).ready(function(){
-  
-  /*************Usuario0*****************************/
-  $('#photo-slide0').jRange({
-    from: 0,
-    to: 10,
-    step: 1,
-    scale: [0,10],
-    format: '%s',
-    width: "auto",
-    showLabels: false,
-    onstatechange:function(value){
-      photoMB = value * .819 ;
-      moveBar();
-    }
-    });
+  var photoMB;
+  var songMB;
+  var videoMb; 
+  var internetMb;
+  var aplicationMb;
+  var emailMb; 
+  var documentsMb;
 
-  $('#song-slide0').jRange({
-    from: 0,
-    to: 10,
-    step: 1,
-    scale: [0,10],
-    format: '%s',
-    width: "auto",
-    showLabels: false,
-    onstatechange:function(value){
-      songMB = value * 7 ;
-      moveBar();
-    }
-  });
+  var photoMB1=0;
+  var songMB1=0;
+  var videoMb1=0; 
+  var internetMb1=0;
+  var aplicationMb1=0;
+  var emailMb1=0; 
+  var documentsMb1=0;
 
-  $('#video-slide0').jRange({
-  from: 0,
-  to: 90,
-  step: 1,
-  scale: [0,90],
-  format: '%s',
-  width: "auto",
-  showLabels: false,
-    onstatechange:function(value){
-      videoMb = value * 8 ;
-      moveBar();
-    }
-  });
+ var usuarioLength =1;
 
-  $('#internet-slide0').jRange({
-  from: 0,
-  to: 100,
-  step: 1,
-  scale: [0,100],
-  format: '%s',
-  width: "auto",
-  showLabels: false,
-    onstatechange:function(value){
-      internetMb = value * 1.45 ;
-      moveBar();
-    }
-   });
-
-  $('#aplication-slide0').jRange({
-  from: 0,
-  to: 30,
-  step: 1,
-  scale: [0,30],
-  format: '%s',
-  width: "auto",
-  showLabels: false,
-   onstatechange:function(value){
-      aplicationMb = value * 5 ;
-      moveBar();
-    }
-  });
-
-  $('#email-slide0').jRange({
-  from: 0,
-  to: 100,
-  step: 1,
-  scale: [0,100],
-  format: '%s',
-  width: "auto",
-  showLabels: false, 
-   onstatechange:function(value){
-      emailMb = value * .249 ;
-      moveBar();
-    }
-  });
-
-  $('#documents-slide0').jRange({
-  from: 0,
-  to: 20,
-  step: 1,
-  scale: [0,20],
-  format: '%s',
-  width: "auto",
-  showLabels: false,
-  onstatechange:function(value){
-      documentsMb = value * 4 ;
-      moveBar();
-    }
-
-  });
-
-  
-
-
-  var photoMB = document.getElementById("photo-slide0").value * .819;
-  var songMB = document.getElementById("song-slide0").value * 7;
-  var videoMb = document.getElementById("video-slide0").value * 8;
-  var internetMb = 0;
-  var aplicationMb =  0;
-  var emailMb = 0;
-  var documentsMb =0;
-
-  moveBar();
-
-  function moveBar(){
-    var totalMBValue = (photoMB + songMB + videoMb + internetMb + aplicationMb + emailMb +documentsMb )*30;
-    console.log(totalMBValue, photoMB, songMB);
+ 
+function moveBar(){
+    var totalMBValue = (photoMB + songMB + videoMb + internetMb + aplicationMb + emailMb + documentsMb )*30;
+    var totalMBValue1= (photoMB1 + songMB1 + videoMb1 + internetMb1 + aplicationMb1 + emailMb1 + documentsMb1)*30;
+    var totalUserValue = (totalMBValue + totalMBValue1);
     var totalMB = 20000;
-    var porcentBar = (totalMBValue * 100) / totalMB;
+    var porcentBar = ( totalUserValue * 100) / totalMB;
     document.getElementById("total-price-bar").style.width = porcentBar + "%";
 
 
  
 
     if(totalMBValue<=20001)
-    document.querySelector('.cantidadTotal').innerHTML = Math.round(totalMBValue)+" MB/mo";
+    document.querySelector('.cantidadTotal').innerHTML = Math.round(totalUserValue)+" MB/mo";
     
     else 
     document.querySelector('.cantidadTotal').innerHTML = "20000 MB/mo";
 
   }
 
+$(document).ready(function(){
 
-});
-
-   var usuarioLenght =0;
-
-   function crear(){
-    if(usuarioLenght<6){
-  $('#photo-slide'+usuarioLenght).jRange({
-    from: 0,
-    to: 10,
-    step: 1,
-    scale: [0,10],
-    format: '%s',
-    width: "auto",
-    showLabels: false,
-    onstatechange:function(value){
-     
+/*************Usuario0*****************************/
+  $('#photo-slide0').slider({
+    min: 0,
+    max: 10,
+    value:8,
+    range:"min",
+    slide:function(event,ui){
+      photoMB = ui.value * .819 ;
+      moveBar();
     }
     });
 
-  $('#song-slide'+usuarioLenght).jRange({
-    from: 0,
-    to: 10,
-    step: 1,
-    scale: [0,10],
-    format: '%s',
-    width: "auto",
-    showLabels: false,
-    onstatechange:function(value){
-      
+  $('#song-slide0').slider({
+    min: 0,
+    max: 10,
+    value:5,
+    range:"min",
+    slide:function(event,ui){
+      songMB = ui.value * 7 ;
+      moveBar();
     }
   });
 
-  $('#video-slide'+usuarioLenght).jRange({
-  from: 0,
-  to: 90,
-  step: 1,
-  scale: [0,90],
-  format: '%s',
-  width: "auto",
-  showLabels: false,
-    onstatechange:function(value){
+  $('#video-slide0').slider({
+    min: 0,
+    max: 10,
+    value:5,
+    range:"min",
+    slide:function(event,ui){
+      videoMb = ui.value * 8 ;
+      moveBar();
+    }
+  });
+
+  $('#internet-slide0').slider({
+    min: 0,
+    max: 10,
+    value:5,
+    range:"min",
+    slide:function(event,ui){
+      internetMb = ui.value * 1.45 ;
+      moveBar();
+    }
+  });
+ 
+  $('#aplication-slide0').slider({
+    min: 0,
+    max: 10,
+    value:5,
+    range:"min",
+    slide:function(event,ui){
+      aplicationMb = ui.value * 5 ;
+      moveBar();
+    }
+  });
+
+  $('#email-slide0').slider({
+    min: 0,
+    max: 10,
+    value:5,
+    range:"min",
+    slide:function(event,ui){
+      emailMb = ui.value * .249 ;
+      moveBar();
+    }
+  });
+
+  $('#documents-slide0').slider({
+    min: 0,
+    max: 10,
+    value:5,
+    range:"min",
+    slide:function(event,ui){
+      documentsMb = ui.value * 4 ;
+      moveBar();
+    }
+  });
+
+
+
+   photoMB = $( "#photo-slide0" ).slider("value") *.839;
+   songMB = $( "#song-slide0" ).slider("value")  * 7;
+   videoMb = $( "#video-slide0" ).slider("value") * 8;
+   internetMb = $( "#internet-slide0" ).slider("value")  * 1.45;
+   aplicationMb = $( "#aplication-slide0" ).slider("value" ) * 5;
+   emailMb = $( "#email-slide0" ).slider("value") * .249;
+   documentsMb =$( "#documents-slide0" ).slider("value") * 4;
+
+  moveBar();
+
+  
+
+ var max=1;
+ var min = 1;
+ var user=1;
+
+ 
+function sliders(){
+ /*************Usuario1*****************************/
+  $('#photo-slide'+user).slider({
+    slide:function(event,ui){
+      photoMB1 = ui.value * .819 ;
+      moveBar();
+    }
+    });
+
+  $('#song-slide'+user).slider({
+    slide:function(event,ui){
+      songMB1 = ui.value * 7;
+      moveBar();
+    }
+  });
+
+  $('#video-slide'+user).slider({
+    slide:function(event,ui){
+      videoMb1 = ui.value *18;
+      moveBar();
+    }
+  });
+
+  $('#internet-slide'+user).slider({
+    slide:function(event,ui){
+      internetMb1 = ui.value * 1.45;
+      moveBar();
+    }
+  });
+ 
+  $('#aplication-slide'+user).slider({
+    slide:function(event,ui){
+      aplicationMb1 = ui.value * 5;
+      moveBar();
+
+    }
+  });
+
+  $('#email-slide'+user).slider({
+    slide:function(event,ui){
+      emailMb1 = ui.value * .249;
+      moveBar();
+    }
+  });
+
+  $('#documents-slide'+user).slider({
+    slide:function(event,ui){
+      documentsMb1 = ui.value * 4;
+      moveBar();
+    }
+  });
+
+}
+
+
+
+ function ocultar(){
+      $( "#nuevo"+max).hide();
+      max+=1;
+  }
+ 
+ ocultar();
+
+
+function mostrar(){
+  $( "#nuevo"+min).show();
+  min+=1;
+}
+
+
+   $('#agregar').click(function(){
+    ocultar();
+    mostrar();
+    sliders();
+});
+
+});
+
+
+  
+
+   function crear(){
+    if(usuarioLength<6){
+  $('#photo-slide'+usuarioLength).slider({
+    min: 0,
+    max: 10,
+    value:0,
+    range:"min",
+    slide:function(event,ui){
     
     }
-  });
+    });
 
-  $('#internet-slide'+usuarioLenght).jRange({
-  from: 0,
-  to: 100,
-  step: 1,
-  scale: [0,100],
-  format: '%s',
-  width: "auto",
-  showLabels: false,
-    onstatechange:function(value){
-      
-    }
-   });
-
-  $('#aplication-slide'+usuarioLenght).jRange({
-  from: 0,
-  to: 30,
-  step: 1,
-  scale: [0,30],
-  format: '%s',
-  width: "auto",
-  showLabels: false,
-   onstatechange:function(value){
-      
+  $('#song-slide'+usuarioLength).slider({
+    min: 0,
+    max: 10,
+    value:0,
+    range:"min",
+    slide:function(event,ui){
+     
     }
   });
 
-  $('#email-slide'+usuarioLenght).jRange({
-  from: 0,
-  to: 100,
-  step: 1,
-  scale: [0,100],
-  format: '%s',
-  width: "auto",
-  showLabels: false, 
-   onstatechange:function(value){
+  $('#video-slide'+usuarioLength).slider({
+    min: 0,
+    max: 10,
+    value:0,
+    range:"min",
+    slide:function(event,ui){
+     
+    }
+  });
+
+  $('#internet-slide'+usuarioLength).slider({
+    min: 0,
+    max: 10,
+    value:0,
+    range:"min",
+    slide:function(event,ui){
+      
+    }
+  });
+ 
+  $('#aplication-slide'+usuarioLength).slider({
+    min: 0,
+    max: 10,
+    value:0,
+    range:"min",
+    slide:function(event,ui){
       
     }
   });
 
-  $('#documents-slide'+usuarioLenght).jRange({
-  from: 0,
-  to: 20,
-  step: 1,
-  scale: [0,20],
-  format: '%s',
-  width: "auto",
-  showLabels: false,
-  onstatechange:function(value){
-          }
-
+  $('#email-slide'+usuarioLength).slider({
+    min: 0,
+    max: 10,
+    value:0,
+    range:"min",
+    slide:function(event,ui){
+     
+    }
   });
+
+  $('#documents-slide'+usuarioLength).slider({
+    min: 0,
+    max: 10,
+    value:0,
+    range:"min",
+    slide:function(event,ui){
+      
+    }
+  });
+
   }
-  console.log("Si entro");
 }
 
 
 
 
 function uAumenta(){
-  if(usuarioLenght<6){
-  usuarioLenght+=1;
-  }
+  if(usuarioLength<6){
+  usuarioLength+=1;
 
-  console.log(usuarioLenght);
+  }
 }
 
 function Usuario(){
   this.id;
   this.nombre = "Usuario";
 }
-
-var usuarioLenght;
 
 
 
@@ -267,10 +322,10 @@ telcelApp.controller('calculadoraDatos', ['$scope', '$http', function($scope, $h
     $scope.userSelected = 0;
 
     $scope.usuarios = [];
-    usuarioLenght = $scope.usuarios.length;
+    usuarioLength = $scope.usuarios.length;
 
     var userDefault = new Usuario();
-    userDefault.nombre = "Mi usuario";
+    userDefault.nombre = "Mis datos";
     userDefault.id = 0;
 
     $scope.usuarios.push(userDefault);
@@ -279,18 +334,26 @@ telcelApp.controller('calculadoraDatos', ['$scope', '$http', function($scope, $h
 
     $scope.nuevo = function(){
       if($scope.usuarios.length<6){
+        $scope.seleccionarUltimo(usuarioLength);
       var nuevoUsuario = new Usuario();
       nuevoUsuario.id = $scope.usuarios.length;      
       $scope.usuarios.push(nuevoUsuario);
 
     }
       else
-        alert("Solo se puede agregar un maximo de 6 usuarios");
+        console.log("maximo");
+    };
+  
+  
+    $scope.primero = function(){
+      var nuevoUsuario = new Usuario();
+      nuevoUsuario.id = $scope.usuarios.length;      
+      $scope.usuarios.push(nuevoUsuario);
     };
 
-   
+    $scope.primero();
   
-
+    
     $scope.seleccionarOtro = function(_id){
       $scope.userSelected = _id;
       var x = 0;
@@ -300,7 +363,17 @@ telcelApp.controller('calculadoraDatos', ['$scope', '$http', function($scope, $h
       }
 
     };
+   
+   $scope.seleccionarUltimo = function(_id){
+      $scope.userSelected = _id;
+      var x = 0;
+      for (var i = $scope.usuarios.length - 1; i >= 0; i--) {
+        x += $scope.usuarios[i].id;
 
+      }
+
+    };
+    
 
     
 }]);

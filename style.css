@@ -1,5 +1,6 @@
 body{
 background-color:#fff;
+color:#1d559c;
 }
 
 .btnSiguiente{
@@ -28,6 +29,10 @@ background-color:#fff;
 
 .btnSiguinte{
 	float: right;
+}
+
+.btnUsers{
+	margin-right:8px; 
 }
 
 .carousel-inner
@@ -135,6 +140,10 @@ h1
   
 }
 
+.topBtns{
+	margin-left:40px;  
+}
+
 .logoTelcel{
 	float: right;
 	height: auto;
@@ -188,6 +197,20 @@ section
 
 .slider-container .back-bar .pointer {
 	cursor:pointer; 
+}
+
+.ui-widget-header {
+  border: 1px solid #aeaeae ;
+  background: #00448c;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  border: 1px solid #00448c;
+  background: #aeaeae ;
+  font-weight: bold;
+  color: #1c94c4;
 }
 
 
