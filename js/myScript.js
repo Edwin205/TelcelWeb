@@ -1,3 +1,5 @@
+  
+
   var photoMB;
   var songMB;
   var videoMb; 
@@ -14,26 +16,96 @@
   var emailMb1=0; 
   var documentsMb1=0;
 
+  var photoMB2=0;
+  var songMB2=0;
+  var videoMb2=0; 
+  var internetMb2=0;
+  var aplicationMb2=0;
+  var emailMb2=0; 
+  var documentsMb2=0;
+
+  var photoMB3=0;
+  var songMB3=0;
+  var videoMb3=0; 
+  var internetMb3=0;
+  var aplicationMb3=0;
+  var emailMb3=0; 
+  var documentsMb3=0;
+
+  var photoMB4=0;
+  var songMB4=0;
+  var videoMb4=0; 
+  var internetMb4=0;
+  var aplicationMb4=0;
+  var emailMb4=0; 
+  var documentsMb4=0;
+
+  var photoMB5=0;
+  var songMB5=0;
+  var videoMb5=0; 
+  var internetMb5=0;
+  var aplicationMb5=0;
+  var emailMb5=0; 
+  var documentsMb5=0;
+
+
+
+
+var totalMBValue0;
+var totalMBValue1;
+var totalMBValue2;
+var totalMBValue3;
+var totalMBValue4;
+var totalMBValue5;
+
  var usuarioLength =1;
 
  
 function moveBar(){
-    var totalMBValue = (photoMB + songMB + videoMb + internetMb + aplicationMb + emailMb + documentsMb )*30;
-    var totalMBValue1= (photoMB1 + songMB1 + videoMb1 + internetMb1 + aplicationMb1 + emailMb1 + documentsMb1)*30;
-    var totalUserValue = (totalMBValue + totalMBValue1);
+    totalMBValue0 = (photoMB + songMB + videoMb + internetMb + aplicationMb + emailMb + documentsMb )*30;
+    totalMBValue1 = (photoMB1 + songMB1 + videoMb1 + internetMb1 + aplicationMb1 + emailMb1 + documentsMb1)*30;
+    totalMBValue2 = (photoMB2 + songMB2 + videoMb2 + internetMb2 + aplicationMb2 + emailMb2 + documentsMb2)*30;
+    totalMBValue3 = (photoMB3 + songMB3 + videoMb3 + internetMb3 + aplicationMb3 + emailMb3 + documentsMb3)*30;
+    totalMBValue4 = (photoMB4 + songMB4 + videoMb4 + internetMb4 + aplicationMb4 + emailMb4 + documentsMb4)*30;
+    totalMBValue5 = (photoMB5 + songMB5 + videoMb5 + internetMb5 + aplicationMb5 + emailMb5 + documentsMb5)*30;
+    var totalUserValue = (totalMBValue0 + totalMBValue1 + totalMBValue2 + totalMBValue3 + totalMBValue4 + totalMBValue5);
     var totalMB = 20000;
     var porcentBar = ( totalUserValue * 100) / totalMB;
     document.getElementById("total-price-bar").style.width = porcentBar + "%";
+    
 
+    document.querySelector('#pruebaValor0').innerHTML = Math.round(totalMBValue0)+" MB/mo";
 
  
 
-    if(totalMBValue<=20001)
+    if(totalUserValue<=20001)
     document.querySelector('.cantidadTotal').innerHTML = Math.round(totalUserValue)+" MB/mo";
     
     else 
     document.querySelector('.cantidadTotal').innerHTML = "20000 MB/mo";
 
+  }
+
+
+
+  function totalmb1(){
+    document.querySelector('#pruebaValor1').innerHTML = Math.round(totalMBValue1)+" MB/mo";
+  }
+
+   function totalmb2(){
+    document.querySelector('#pruebaValor2').innerHTML = Math.round(totalMBValue2)+" MB/mo";
+  }
+
+   function totalmb3(){
+    document.querySelector('#pruebaValor3').innerHTML = Math.round(totalMBValue3)+" MB/mo";
+  }
+
+   function totalmb4(){
+    document.querySelector('#pruebaValor4').innerHTML = Math.round(totalMBValue4)+" MB/mo";
+  }
+
+   function totalmb5(){
+    document.querySelector('#pruebaValor5').innerHTML = Math.round(totalMBValue5)+" MB/mo";
   }
 
 $(document).ready(function(){
@@ -132,58 +204,301 @@ $(document).ready(function(){
 
  var max=1;
  var min = 1;
- var user=1;
 
  
 function sliders(){
  /*************Usuario1*****************************/
-  $('#photo-slide'+user).slider({
+  $('#photo-slide1').slider({
     slide:function(event,ui){
       photoMB1 = ui.value * .819 ;
       moveBar();
+      totalmb1();
+
     }
     });
 
-  $('#song-slide'+user).slider({
+  $('#song-slide1').slider({
     slide:function(event,ui){
       songMB1 = ui.value * 7;
       moveBar();
+      totalmb1();
+
     }
   });
 
-  $('#video-slide'+user).slider({
+  $('#video-slide1').slider({
     slide:function(event,ui){
       videoMb1 = ui.value *8;
       moveBar();
+      totalmb1();
     }
   });
 
-  $('#internet-slide'+user).slider({
+  $('#internet-slide1').slider({
     slide:function(event,ui){
       internetMb1 = ui.value * 1.45;
       moveBar();
+      totalmb1();
     }
   });
  
-  $('#aplication-slide'+user).slider({
+  $('#aplication-slide1').slider({
     slide:function(event,ui){
       aplicationMb1 = ui.value * 5;
       moveBar();
+      totalmb1();
 
     }
   });
 
-  $('#email-slide'+user).slider({
+  $('#email-slide1').slider({
     slide:function(event,ui){
       emailMb1 = ui.value * .249;
       moveBar();
+      totalmb1();
     }
   });
 
-  $('#documents-slide'+user).slider({
+  $('#documents-slide1').slider({
     slide:function(event,ui){
       documentsMb1 = ui.value * 4;
       moveBar();
+      totalmb1();
+    }
+  });
+
+  /*************Usuario2*****************************/
+  $('#photo-slide2').slider({
+    slide:function(event,ui){
+      photoMB2 = ui.value * .819 ;
+      moveBar();
+      totalmb2();
+    }
+    });
+
+  $('#song-slide2').slider({
+    slide:function(event,ui){
+      songMB2 = ui.value * 7;
+      moveBar();
+      totalmb2();
+
+    }
+  });
+
+  $('#video-slide2').slider({
+    slide:function(event,ui){
+      videoMb2 = ui.value *8;
+      moveBar();
+      totalmb2();
+    }
+  });
+
+  $('#internet-slide2').slider({
+    slide:function(event,ui){
+      internetMb2 = ui.value * 1.45;
+      moveBar();
+      totalmb2();
+    }
+  });
+ 
+  $('#aplication-slide2').slider({
+    slide:function(event,ui){
+      aplicationMb2 = ui.value * 5;
+      moveBar();
+      totalmb2();
+
+    }
+  });
+
+  $('#email-slide2').slider({
+    slide:function(event,ui){
+      emailMb2 = ui.value * .249;
+      moveBar();
+      totalmb2();
+    }
+  });
+
+  $('#documents-slide2').slider({
+    slide:function(event,ui){
+      documentsMb2 = ui.value * 4;
+      moveBar();
+      totalmb2();
+    }
+  });
+
+  /*************Usuario3*****************************/
+  $('#photo-slide3').slider({
+    slide:function(event,ui){
+      photoMB3 = ui.value * .819 ;
+      moveBar();
+      totalmb3();
+    }
+    });
+
+  $('#song-slide3').slider({
+    slide:function(event,ui){
+      songMB3 = ui.value * 7;
+      moveBar();
+      totalmb3();
+    }
+  });
+
+  $('#video-slide3').slider({
+    slide:function(event,ui){
+      videoMb3 = ui.value *8;
+      moveBar();
+      totalmb3();
+    }
+  });
+
+  $('#internet-slide3').slider({
+    slide:function(event,ui){
+      internetMb3 = ui.value * 1.45;
+      moveBar();
+      totalmb3();
+    }
+  });
+ 
+  $('#aplication-slide3').slider({
+    slide:function(event,ui){
+      aplicationMb3 = ui.value * 5;
+      moveBar();
+      totalmb3();
+
+    }
+  });
+
+  $('#email-slide3').slider({
+    slide:function(event,ui){
+      emailMb3 = ui.value * .249;
+      moveBar();
+      totalmb3();
+    }
+  });
+
+  $('#documents-slide3').slider({
+    slide:function(event,ui){
+      documentsMb3 = ui.value * 4;
+      moveBar();
+      totalmb3();
+    }
+  });
+
+
+  /*************Usuario4*****************************/
+  $('#photo-slide4').slider({
+    slide:function(event,ui){
+      photoMB4 = ui.value * .819 ;
+      moveBar();
+      totalmb4();
+    }
+    });
+
+  $('#song-slide4').slider({
+    slide:function(event,ui){
+      songMB4 = ui.value * 7;
+      moveBar();
+      totalmb4();
+    }
+  });
+
+  $('#video-slide4').slider({
+    slide:function(event,ui){
+      videoMb4 = ui.value *8;
+      moveBar();
+      totalmb4();
+    }
+  });
+
+  $('#internet-slide4').slider({
+    slide:function(event,ui){
+      internetMb4 = ui.value * 1.45;
+      moveBar();
+      totalmb4();
+    }
+  });
+ 
+  $('#aplication-slide4').slider({
+    slide:function(event,ui){
+      aplicationMb4 = ui.value * 5;
+      moveBar();
+      totalmb4();
+
+    }
+  });
+
+  $('#email-slide4').slider({
+    slide:function(event,ui){
+      emailMb4 = ui.value * .249;
+      moveBar();
+      totalmb4();
+    }
+  });
+
+  $('#documents-slide4').slider({
+    slide:function(event,ui){
+      documentsMb4 = ui.value * 4;
+      moveBar();
+      totalmb4();
+    }
+  });
+
+
+  /*************Usuario5*****************************/
+  $('#photo-slide5').slider({
+    slide:function(event,ui){
+      photoMB5 = ui.value * .819 ;
+      moveBar();
+      totalmb5();
+    }
+    });
+
+  $('#song-slide5').slider({
+    slide:function(event,ui){
+      songMB5 = ui.value * 7;
+      moveBar();
+      totalmb5();
+    }
+  });
+
+  $('#video-slide5').slider({
+    slide:function(event,ui){
+      videoMb5 = ui.value *8;
+      moveBar();
+      totalmb5();
+    }
+  });
+
+  $('#internet-slide5').slider({
+    slide:function(event,ui){
+      internetMb5 = ui.value * 1.45;
+      moveBar();
+      totalmb5();
+    }
+  });
+ 
+  $('#aplication-slide5').slider({
+    slide:function(event,ui){
+      aplicationMb5 = ui.value * 5;
+      moveBar();
+      totalmb5();
+
+    }
+  });
+
+  $('#email-slide5').slider({
+    slide:function(event,ui){
+      emailMb5 = ui.value * .249;
+      moveBar();
+      totalmb5();
+    }
+  });
+
+  $('#documents-slide5').slider({
+    slide:function(event,ui){
+      documentsMb5 = ui.value * 4;
+      moveBar();
+      totalmb5();
     }
   });
 
@@ -209,6 +524,11 @@ function mostrar(){
     ocultar();
     mostrar();
     sliders();
+    totalmb1();
+    totalmb2();
+    totalmb3();
+    totalmb4();
+    totalmb5();
 });
 
 });
@@ -304,6 +624,7 @@ function uAumenta(){
 function Usuario(){
   this.id;
   this.nombre = "Usuario";
+
 }
 
 
@@ -341,7 +662,7 @@ telcelApp.controller('calculadoraDatos', ['$scope', '$http', function($scope, $h
 
     }
       else
-        console.log("maximo");
+        console.log("Maximo usuarios");
     };
   
   

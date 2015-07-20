@@ -28,7 +28,8 @@
 	  </div>
     <div class="row topBtns">
        
-        <button type="button" id="nuevo{{usuario.id}}" class="btn btn-primary btnUsers"  ng-repeat="usuario in usuarios"  ng-click="seleccionarOtro(usuario.id);">{{usuario.nombre}}</button>
+        <button type="button" id="nuevo{{usuario.id}}" class="btn btn-primary btnUsers"  ng-repeat="usuario in usuarios"  ng-click="seleccionarOtro(usuario.id);">{{usuario.nombre}}
+        <p id="pruebaValor{{usuario.id}}"></p></button>
 
       <button type="button" id="agregar" class="btn btn-primary " ng-click="nuevo(); " onclick="uAumenta(); crear(); ">Agregar usuario</button>
 
