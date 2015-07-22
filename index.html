@@ -22,16 +22,15 @@
              <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
                <button type="button" class="btn btn-primary planIdeal" >Plan ideal</button>
              </div>
-             <p  class="col-md-2 col-lg-2">Usuario:{{userSelected}}</p>
           </div>
 	  <p>Uso estimado mensualmente: <b class="cantidadTotal"></b></p>
 	  </div>
     <div class="row topBtns">
        
-        <button type="button" id="nuevo{{usuario.id}}" class="btn btn-primary btnUsers"  ng-repeat="usuario in usuarios"  ng-click="seleccionarOtro(usuario.id);">{{usuario.nombre}}
+        <button type="button" id="nuevo{{usuario.id}}" class="btn btn-primary btnUsers"  ng-repeat="usuario in usuarios"  ng-click="seleccionarOtro(usuario.id);">{{usuario.nombre + " "+usuario.id}}
         <p id="pruebaValor{{usuario.id}}"></p></button>
 
-      <button type="button" id="agregar" class="btn btn-primary " ng-click="nuevo(); " onclick="uAumenta(); crear(); ">Agregar usuario</button>
+      <button type="button" id="agregar" class="btn btn-primary " ng-click="nuevo(); " onclick="uAumenta(); crear(); ">Compartir</button>
 
     </div>
 	</nav>
@@ -51,47 +50,35 @@
         <div class="carousel-inner" role="listbox">
           <div class="item active">
           <div class="inputs">
+
             <div class="row">
-              <div class="col-xs-6 col-sm-7 col-md-5 col-lg-4">
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                <h2>¿Cuantas fotos subes o descargas?</h2>
-              </div>
-            </div>
-              <div class="row">
-               <div class="col-xs-6 col-sm-7 col-md-7 col-lg-6">
-               <div class="sepSliderFoto">
-                 <div id="photo-slide{{usuario.id}}"></div>
+               <div class="row">
+               <div id="photo-slide{{usuario.id}}"></div>
                </div>
               </div>
-              <div class="col-xs-6 col-sm-5 col-md-5 col-lg-6">
-              <div class="radio">
-                <label><input type="radio" onclick="porDia();" name="optradio">Por dia</label>
+               <div class=" text-center col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+               <div class="radio">
+                 <label><input type="radio" name="optradio">Por dia</label>
+               </div>
+                <div class="radio">
+                  <label><input type="radio" name="optradio">Por Mes</label>
                 </div>
                 <div class="radio">
-                <label><input type="radio" name="optradio">Por Mes</label>
+                   <label><input type="radio" name="optradio">Por año</label>
                 </div>
-                <div class="radio">
-                <label><input type="radio" name="optradio">Por año</label>
-                </div>    
-              </div>
-              </div>
-             <div class="row">
+               </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                <h2>¿Cuantos videos ves en esta red?</h2>
-               <div class="row col-xs-12 col-sm-9 col-md-7 col-lg-7 ">
+               <div class="row">
                  <div id="video-slide{{usuario.id}}"></div>
                </div>
-               </div>
-               <div class="row btnsVideos">
-               <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
-               <button type="button" class="btn btn-primary ">Por dia</button>
-               </div>
-               <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
-               <button type="button" class="btn btn-primary ">Por mes</button>
-               </div>
-               <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
-               <button type="button" class="btn btn-primary ">Por año</button>
-               </div>
-               </div>
-             
+              </div>
+            </div>
+
+                          
+      
              <div class="row">
                <h2>¿Cuantas canciones descargas?</h2>
                 <div class="row">
@@ -169,7 +156,7 @@
          <div class="col-xs-7 col-sm-6 col-md-4">
     	  <p class="textoFooter">Subir fotos a redes sociales</p>
           <p class="textoFooter">Ver videos,Tv, o peliculas</p>
-          <p class="textoFooter">Bajar apps</p>
+          <p class="textoFooter">Bajar apps/actualizaciones</p>
           <p class="textoFooter">Bajar documentos</p>
           <p class="textoFooter">Bajar canciones</p>
           <p class="textoFooter">Navegacion en internet</p>
@@ -177,13 +164,13 @@
          </div>
 
          <div class="col-xs-5 col-sm-6 col-md-8">
-          <p class="textoFooter">819kb c/u</p>
-          <p class="textoFooter">8MB por minuto</p>
-          <p class="textoFooter">5MB por app</p>
-          <p class="textoFooter">4MB por doc</p>
-          <p class="textoFooter">7MB por cancion</p>
+          <p class="textoFooter">0.5kb c/u</p>
+          <p class="textoFooter">25MB por video</p>
+          <p class="textoFooter">300MB por software/actualizacion</p>
+          <p class="textoFooter">3MB por doc</p>
+          <p class="textoFooter">6MB por cancion</p>
           <p class="textoFooter">1.45MB por pagina</p>
-          <p class="textoFooter">249KB por mail</p>
+          <p class="textoFooter">0.05KB por mail</p>
           </div>
           </div>
           <div class="row">
@@ -201,6 +188,7 @@
 	<!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script src="jquery-ui.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script src="js/myScript.js"></script>
 	</body>	
 </html>

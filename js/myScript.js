@@ -107,6 +107,8 @@ function moveBar(){
    function totalmb5(){
     document.querySelector('#pruebaValor5').innerHTML = Math.round(totalMBValue5)+" MB/mo";
   }
+   
+
 
 $(document).ready(function(){
 
@@ -117,7 +119,7 @@ $(document).ready(function(){
     value:8,
     range:"min",
     slide:function(event,ui){
-      photoMB = ui.value * .819 ;
+      photoMB = ui.value * .50 ;
       moveBar();
     }
     });
@@ -139,7 +141,7 @@ $(document).ready(function(){
     value:5,
     range:"min",
     slide:function(event,ui){
-      videoMb = ui.value * 8 ;
+      videoMb = ui.value * 25 ;
       moveBar();
     }
   });
@@ -150,7 +152,7 @@ $(document).ready(function(){
     value:5,
     range:"min",
     slide:function(event,ui){
-      internetMb = ui.value * 1.45 ;
+      internetMb = ui.value * .5 ;
       moveBar();
     }
   });
@@ -158,10 +160,10 @@ $(document).ready(function(){
   $('#aplication-slide0').slider({
     min: 0,
     max: 10,
-    value:5,
+    value:0,
     range:"min",
     slide:function(event,ui){
-      aplicationMb = ui.value * 5 ;
+      aplicationMb = ui.value * 300 ;
       moveBar();
     }
   });
@@ -172,7 +174,7 @@ $(document).ready(function(){
     value:5,
     range:"min",
     slide:function(event,ui){
-      emailMb = ui.value * .249 ;
+      emailMb = ui.value * .05 ;
       moveBar();
     }
   });
@@ -183,20 +185,20 @@ $(document).ready(function(){
     value:5,
     range:"min",
     slide:function(event,ui){
-      documentsMb = ui.value * 4 ;
+      documentsMb = ui.value * 3 ;
       moveBar();
     }
   });
 
 
 
-   photoMB = $( "#photo-slide0" ).slider("value") *.839;
-   songMB = $( "#song-slide0" ).slider("value")  * 7;
-   videoMb = $( "#video-slide0" ).slider("value") * 8;
-   internetMb = $( "#internet-slide0" ).slider("value")  * 1.45;
-   aplicationMb = $( "#aplication-slide0" ).slider("value" ) * 5;
-   emailMb = $( "#email-slide0" ).slider("value") * .249;
-   documentsMb =$( "#documents-slide0" ).slider("value") * 4;
+   photoMB = $( "#photo-slide0" ).slider("value") * .50;
+   songMB = $( "#song-slide0" ).slider("value")  * 6;
+   videoMb = $( "#video-slide0" ).slider("value") * 25;
+   internetMb = $( "#internet-slide0" ).slider("value")  * .5;
+   aplicationMb = $( "#aplication-slide0" ).slider("value" ) * 300;
+   emailMb = $( "#email-slide0" ).slider("value") * .05;
+   documentsMb =$( "#documents-slide0" ).slider("value") * 3;
 
   moveBar();
 
@@ -210,7 +212,7 @@ function sliders(){
  /*************Usuario1*****************************/
   $('#photo-slide1').slider({
     slide:function(event,ui){
-      photoMB1 = ui.value * .819 ;
+      photoMB1 = ui.value * .50 ;
       moveBar();
       totalmb1();
 
@@ -228,7 +230,7 @@ function sliders(){
 
   $('#video-slide1').slider({
     slide:function(event,ui){
-      videoMb1 = ui.value *8;
+      videoMb1 = ui.value *25;
       moveBar();
       totalmb1();
     }
@@ -236,7 +238,7 @@ function sliders(){
 
   $('#internet-slide1').slider({
     slide:function(event,ui){
-      internetMb1 = ui.value * 1.45;
+      internetMb1 = ui.value * .5;
       moveBar();
       totalmb1();
     }
@@ -244,7 +246,7 @@ function sliders(){
  
   $('#aplication-slide1').slider({
     slide:function(event,ui){
-      aplicationMb1 = ui.value * 5;
+      aplicationMb1 = ui.value * 300;
       moveBar();
       totalmb1();
 
@@ -253,7 +255,7 @@ function sliders(){
 
   $('#email-slide1').slider({
     slide:function(event,ui){
-      emailMb1 = ui.value * .249;
+      emailMb1 = ui.value * .05;
       moveBar();
       totalmb1();
     }
@@ -261,7 +263,7 @@ function sliders(){
 
   $('#documents-slide1').slider({
     slide:function(event,ui){
-      documentsMb1 = ui.value * 4;
+      documentsMb1 = ui.value * 3;
       moveBar();
       totalmb1();
     }
@@ -270,7 +272,7 @@ function sliders(){
   /*************Usuario2*****************************/
   $('#photo-slide2').slider({
     slide:function(event,ui){
-      photoMB2 = ui.value * .819 ;
+      photoMB2 = ui.value * .50 ;
       moveBar();
       totalmb2();
     }
@@ -287,7 +289,7 @@ function sliders(){
 
   $('#video-slide2').slider({
     slide:function(event,ui){
-      videoMb2 = ui.value *8;
+      videoMb2 = ui.value *25;
       moveBar();
       totalmb2();
     }
@@ -295,7 +297,7 @@ function sliders(){
 
   $('#internet-slide2').slider({
     slide:function(event,ui){
-      internetMb2 = ui.value * 1.45;
+      internetMb2 = ui.value * .5;
       moveBar();
       totalmb2();
     }
@@ -303,7 +305,7 @@ function sliders(){
  
   $('#aplication-slide2').slider({
     slide:function(event,ui){
-      aplicationMb2 = ui.value * 5;
+      aplicationMb2 = ui.value * 300;
       moveBar();
       totalmb2();
 
@@ -312,7 +314,7 @@ function sliders(){
 
   $('#email-slide2').slider({
     slide:function(event,ui){
-      emailMb2 = ui.value * .249;
+      emailMb2 = ui.value * .05;
       moveBar();
       totalmb2();
     }
@@ -320,7 +322,7 @@ function sliders(){
 
   $('#documents-slide2').slider({
     slide:function(event,ui){
-      documentsMb2 = ui.value * 4;
+      documentsMb2 = ui.value * 3;
       moveBar();
       totalmb2();
     }
@@ -329,7 +331,7 @@ function sliders(){
   /*************Usuario3*****************************/
   $('#photo-slide3').slider({
     slide:function(event,ui){
-      photoMB3 = ui.value * .819 ;
+      photoMB3 = ui.value * .50 ;
       moveBar();
       totalmb3();
     }
@@ -345,7 +347,7 @@ function sliders(){
 
   $('#video-slide3').slider({
     slide:function(event,ui){
-      videoMb3 = ui.value *8;
+      videoMb3 = ui.value *25;
       moveBar();
       totalmb3();
     }
@@ -353,7 +355,7 @@ function sliders(){
 
   $('#internet-slide3').slider({
     slide:function(event,ui){
-      internetMb3 = ui.value * 1.45;
+      internetMb3 = ui.value * .5;
       moveBar();
       totalmb3();
     }
@@ -361,7 +363,7 @@ function sliders(){
  
   $('#aplication-slide3').slider({
     slide:function(event,ui){
-      aplicationMb3 = ui.value * 5;
+      aplicationMb3 = ui.value * 300;
       moveBar();
       totalmb3();
 
@@ -370,7 +372,7 @@ function sliders(){
 
   $('#email-slide3').slider({
     slide:function(event,ui){
-      emailMb3 = ui.value * .249;
+      emailMb3 = ui.value * .05;
       moveBar();
       totalmb3();
     }
@@ -378,7 +380,7 @@ function sliders(){
 
   $('#documents-slide3').slider({
     slide:function(event,ui){
-      documentsMb3 = ui.value * 4;
+      documentsMb3 = ui.value * 3;
       moveBar();
       totalmb3();
     }
@@ -388,7 +390,7 @@ function sliders(){
   /*************Usuario4*****************************/
   $('#photo-slide4').slider({
     slide:function(event,ui){
-      photoMB4 = ui.value * .819 ;
+      photoMB4 = ui.value * .50 ;
       moveBar();
       totalmb4();
     }
@@ -404,7 +406,7 @@ function sliders(){
 
   $('#video-slide4').slider({
     slide:function(event,ui){
-      videoMb4 = ui.value *8;
+      videoMb4 = ui.value *25;
       moveBar();
       totalmb4();
     }
@@ -412,7 +414,7 @@ function sliders(){
 
   $('#internet-slide4').slider({
     slide:function(event,ui){
-      internetMb4 = ui.value * 1.45;
+      internetMb4 = ui.value * .5;
       moveBar();
       totalmb4();
     }
@@ -420,7 +422,7 @@ function sliders(){
  
   $('#aplication-slide4').slider({
     slide:function(event,ui){
-      aplicationMb4 = ui.value * 5;
+      aplicationMb4 = ui.value * 300;
       moveBar();
       totalmb4();
 
@@ -429,7 +431,7 @@ function sliders(){
 
   $('#email-slide4').slider({
     slide:function(event,ui){
-      emailMb4 = ui.value * .249;
+      emailMb4 = ui.value * .05;
       moveBar();
       totalmb4();
     }
@@ -437,7 +439,7 @@ function sliders(){
 
   $('#documents-slide4').slider({
     slide:function(event,ui){
-      documentsMb4 = ui.value * 4;
+      documentsMb4 = ui.value * 3;
       moveBar();
       totalmb4();
     }
@@ -447,7 +449,7 @@ function sliders(){
   /*************Usuario5*****************************/
   $('#photo-slide5').slider({
     slide:function(event,ui){
-      photoMB5 = ui.value * .819 ;
+      photoMB5 = ui.value * .50 ;
       moveBar();
       totalmb5();
     }
@@ -463,7 +465,7 @@ function sliders(){
 
   $('#video-slide5').slider({
     slide:function(event,ui){
-      videoMb5 = ui.value *8;
+      videoMb5 = ui.value *25;
       moveBar();
       totalmb5();
     }
@@ -471,7 +473,7 @@ function sliders(){
 
   $('#internet-slide5').slider({
     slide:function(event,ui){
-      internetMb5 = ui.value * 1.45;
+      internetMb5 = ui.value * .5;
       moveBar();
       totalmb5();
     }
@@ -479,7 +481,7 @@ function sliders(){
  
   $('#aplication-slide5').slider({
     slide:function(event,ui){
-      aplicationMb5 = ui.value * 5;
+      aplicationMb5 = ui.value * 300;
       moveBar();
       totalmb5();
 
@@ -488,7 +490,7 @@ function sliders(){
 
   $('#email-slide5').slider({
     slide:function(event,ui){
-      emailMb5 = ui.value * .249;
+      emailMb5 = ui.value * .05;
       moveBar();
       totalmb5();
     }
@@ -496,7 +498,7 @@ function sliders(){
 
   $('#documents-slide5').slider({
     slide:function(event,ui){
-      documentsMb5 = ui.value * 4;
+      documentsMb5 = ui.value * 3;
       moveBar();
       totalmb5();
     }
@@ -623,7 +625,7 @@ function uAumenta(){
 
 function Usuario(){
   this.id;
-  this.nombre = "Usuario";
+  this.nombre = "Contacto";
 
 }
 
