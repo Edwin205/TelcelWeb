@@ -51,22 +51,26 @@
           <div class="item active">
           <div class="inputs">
 
-            <div class="row">
+            <div class="row primerasPreguntas">
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                <h2>¿Cuantas fotos subes o descargas?</h2>
                <div class="row">
-               <div id="photo-slide{{usuario.id}}"></div>
+                 <div id="photo-steppe{{usuario.id}}">
+                    <button data-input-stepper-decrease>-</button>
+                    <input  id="photo-stepper{{usuario.id}}"  type="text"  readonly >
+                    <button data-input-stepper-increase>+</button>
+                 </div>
                </div>
               </div>
                <div class=" text-center col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
                <div class="radio">
-                 <label><input type="radio" name="optradio">Por dia</label>
+                 <label><input type="radio" id="xDiaFoto" name="tiempoFotoVideo">Por dia</label>
                </div>
                 <div class="radio">
-                  <label><input type="radio" name="optradio">Por Mes</label>
+                  <label><input type="radio" id="xSemanaFoto" name="tiempoFotoVideo">Por semana</label>
                 </div>
-                <div class="radio">
-                   <label><input type="radio" name="optradio">Por año</label>
+                <div class="radio ">
+                   <label><input type="radio" id="xMesFoto" name="tiempoFotoVideo">Por mes</label>
                 </div>
                </div>
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -80,23 +84,24 @@
                           
       
              <div class="row">
-               <h2>¿Cuantas canciones descargas?</h2>
+                <h2 class="col-xs-6 col-sm-6 col-md-4 col-lg-4 ">¿Cuantas canciones descargas?</h2>
+
+                <div class="row">
+                <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label><input type="radio" id="xDiaCancion" name="tiempoCanciones">Por dia</label>
+                </div>
+                <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label><input type="radio" id="xSemanaCancion" name="tiempoCanciones">Por semana</label>
+                </div>
+                <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label><input type="radio" id="xMesCancion" name="tiempoCanciones">Por mes</label>
+                </div>
+                </div>
                 <div class="row">
                   <div class="col-xs-8 col-sm-7 col-md-7 col-lg-7">
                    <div class="sepSlider">
                      <div id="song-slide{{usuario.id}}"></div>
                    </div>
-                  </div>
-                  <div class="col-xs-4 col-sm-5 col-md-5 col-lg-5 ">
-                      <div class="radio">
-                      <label><input type="radio" name="optradio">Por dia</label>
-                      </div>
-                      <div class="radio">
-                      <label><input type="radio" name="optradio">Por Mes</label>
-                      </div>
-                      <div class="radio">
-                      <label><input type="radio" name="optradio">Por año</label>
-                      </div>
                   </div>
                 </div>
              </div>
@@ -138,8 +143,7 @@
         </a>
         </div>  
     </section>
-  </div>
-
+</div>
   
     <footer>
     <nav class="navbar navbar-default navbar-static-bottom navFoot">
@@ -189,6 +193,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="jquery-ui.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/jquery.input-stepper.js"></script>
     <script src="js/myScript.js"></script>
 	</body>	
 </html>

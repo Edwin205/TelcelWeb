@@ -53,6 +53,14 @@ color:#1d559c;
 	
 }
 
+.checkbox, .radio {
+	margin-top:20px; 
+}
+
+.checkbox + .checkbox, .radio + .radio {
+    margin-top: 20px;
+}
+
 
 .inputs
 {
@@ -60,12 +68,12 @@ color:#1d559c;
 }
 
 .inputEmail{
-	margin-bottom: 297px;
+	margin-bottom: 214px;
 }
 
 .internetInput{
 	margin-left:10px;
-	margin-bottom: 379px;  
+	margin-bottom: 300px;  
 }
 
 .itemPosition
@@ -157,6 +165,12 @@ h1
 	margin-right:100px; 
 }
 
+
+
+.primerasPreguntas{
+	margin-bottom:100px 
+}
+
 section
 {
 	margin-top:100px; 
@@ -229,9 +243,10 @@ section
 	margin: 50px;
 }
 
-
+.prueba {
+	width: 20px;
+}
 
 
 
   
-}

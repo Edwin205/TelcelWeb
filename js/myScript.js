@@ -112,6 +112,33 @@ function moveBar(){
 
 $(document).ready(function(){
 
+  $( "#xDiaFoto" ).prop( "checked", true );
+$( "#xDiaCancion" ).prop( "checked", true );
+
+
+
+$('#photo-steppe0').inputStepper({
+    initialValue:5 ,
+    min: 0,
+    max: Infinity,
+    selectorInput: 'input',
+    selectorButtonIncrease: '[data-input-stepper-increase]',
+    selectorButtonDecrease: '[data-input-stepper-decrease]',
+    dataAttributeIncrease: 'input-stepper-increase',
+    dataAttributeDecrease: 'input-stepper-decrease',
+    classNameDisabled: 'is-disabled'
+});
+
+$('#photo-stepper0').on('increase', function (e, amount, plugin) {
+    photoMB = $('#photo-stepper0').val() *.50;
+    moveBar();
+})
+
+$('#photo-stepper0').on('decrease', function (e, amount, plugin) {
+    photoMB = $('#photo-stepper0').val() *.50;
+    moveBar();
+});
+
 /*************Usuario0*****************************/
   $('#photo-slide0').slider({
     min: 0,
@@ -192,7 +219,7 @@ $(document).ready(function(){
 
 
 
-   photoMB = $( "#photo-slide0" ).slider("value") * .50;
+   photoMB = $('#photo-stepper0').val() *.50;
    songMB = $( "#song-slide0" ).slider("value")  * 6;
    videoMb = $( "#video-slide0" ).slider("value") * 25;
    internetMb = $( "#internet-slide0" ).slider("value")  * .5;
@@ -210,14 +237,17 @@ $(document).ready(function(){
  
 function sliders(){
  /*************Usuario1*****************************/
-  $('#photo-slide1').slider({
-    slide:function(event,ui){
-      photoMB1 = ui.value * .50 ;
+  $('#photo-stepper1').on('increase', function (e, amount, plugin) {
+      photoMB1 = $('#photo-stepper1').val() *.50;
       moveBar();
       totalmb1();
+  });
 
-    }
-    });
+  $('#photo-stepper1').on('decrease', function (e, amount, plugin) {
+      photoMB1 = $('#photo-stepper1').val() *.50;
+      moveBar();
+      totalmb1();
+  });
 
   $('#song-slide1').slider({
     slide:function(event,ui){
@@ -540,15 +570,17 @@ function mostrar(){
 
    function crear(){
     if(usuarioLength<6){
-  $('#photo-slide'+usuarioLength).slider({
+  $('#photo-steppe'+usuarioLength).inputStepper({
+    initialValue:2 ,
     min: 0,
-    max: 10,
-    value:0,
-    range:"min",
-    slide:function(event,ui){
-    
-    }
-    });
+    max: Infinity,
+    selectorInput: 'input',
+    selectorButtonIncrease: '[data-input-stepper-increase]',
+    selectorButtonDecrease: '[data-input-stepper-decrease]',
+    dataAttributeIncrease: 'input-stepper-increase',
+    dataAttributeDecrease: 'input-stepper-decrease',
+    classNameDisabled: 'is-disabled'
+});
 
   $('#song-slide'+usuarioLength).slider({
     min: 0,
