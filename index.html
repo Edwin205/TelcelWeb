@@ -54,7 +54,7 @@
             <div class="row primerasPreguntas">
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                <h2>¿Cuantas fotos subes o descargas?</h2>
-               <div class="row">
+               <div class="row inputFotoVideo">
                  <div id="photo-steppe{{usuario.id}}">
                     <button data-input-stepper-decrease>-</button>
                     <input  id="photo-stepper{{usuario.id}}"  type="text"  readonly >
@@ -64,19 +64,23 @@
               </div>
                <div class=" text-center col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
                <div class="radio">
-                 <label><input type="radio" id="xDiaFoto" name="tiempoFotoVideo">Por dia</label>
+                 <label><input type="radio"  id="xDiaFoto{{usuario.id}}" name="tiempoFotoVideo{{usuario.id}}">Por dia</label>
                </div>
                 <div class="radio">
-                  <label><input type="radio" id="xSemanaFoto" name="tiempoFotoVideo">Por semana</label>
+                  <label><input type="radio" id="xSemanaFoto{{usuario.id}}" onclick="porSemanaFotoVideo();" name="tiempoFotoVideo{{usuario.id}}">Por semana</label>
                 </div>
                 <div class="radio ">
-                   <label><input type="radio" id="xMesFoto" name="tiempoFotoVideo">Por mes</label>
+                   <label><input type="radio" id="xMesFoto{{usuario.id}}" onclick="porMesFotoVideo();" name="tiempoFotoVideo{{usuario.id}}">Por mes</label>
                 </div>
                </div>
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                <h2>¿Cuantos videos ves en esta red?</h2>
-               <div class="row">
-                 <div id="video-slide{{usuario.id}}"></div>
+               <div class="row inputFotoVideo">
+                 <div id="video-steppe{{usuario.id}}">
+                    <button data-input-stepper-decrease>-</button>
+                    <input  id="video-stepper{{usuario.id}}"  type="text"  readonly >
+                    <button data-input-stepper-increase>+</button>
+                 </div>
                </div>
               </div>
             </div>
@@ -88,13 +92,13 @@
 
                 <div class="row">
                 <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <label><input type="radio" id="xDiaCancion" name="tiempoCanciones">Por dia</label>
+                <label><input type="radio" id="xDiaCancion{{usuario.id}}" name="tiempoCanciones{{usuario.id}}">Por dia</label>
                 </div>
                 <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <label><input type="radio" id="xSemanaCancion" name="tiempoCanciones">Por semana</label>
+                <label><input type="radio" id="xSemanaCancion{{usuario.id}}" name="tiempoCanciones{{usuario.id}}">Por semana</label>
                 </div>
                 <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <label><input type="radio" id="xMesCancion" name="tiempoCanciones">Por mes</label>
+                <label><input type="radio" id="xMesCancion{{usuario.id}}" name="tiempoCanciones{{usuario.id}}">Por mes</label>
                 </div>
                 </div>
                 <div class="row">
@@ -104,20 +108,70 @@
                    </div>
                   </div>
                 </div>
+                <div class="row">
+                  <h2 class="col-xs-5 col-sm-5 col-md-5 col-lg-5">0</h2>
+                  <h2 class="maxValue col-xs-5 col-sm-5 col-md-5 col-lg-5">10</h2>
+                </div>
              </div>
           </div>
           </div>
           <div class="item">
           <div class="inps">
-            <h2>¿Cuanta aplicaciones descargas y con que frecuencia?</h2>
+            <div class="row">
+            <h2 class="col-xs-6 col-sm-6 col-md-6 col-lg-6">¿Cuanta aplicaciones descargas y con que frecuencia?</h2>
+             <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label><input type="radio" id="xDiaAplication{{usuario.id}}" name="tiempoAplication{{usuario.id}}">Por dia</label>
+                </div>
+                <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label><input type="radio" id="xSemanaAplication{{usuario.id}}" name="tiempoAplication{{usuario.id}}">Por semana</label>
+                </div>
+                <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label><input type="radio" id="xMesAplication{{usuario.id}}" name="tiempoAplication{{usuario.id}}">Por mes</label>
+                </div>
+            </div>
              <div id="aplication-slide{{usuario.id}}"></div>
+             <div class="row">
+                  <h2 class="col-xs-5 col-sm-5 col-md-5 col-lg-5">0</h2>
+                  <h2 class="maxValue2 col-xs-5 col-sm-5 col-md-5 col-lg-5">10</h2>
+                </div>
 
-              <h2>¿Con que frecuencia bajas documentos desde tu dispositivo?</h2>
+
+              <div class="row">
+                <h2 class="col-xs-6 col-sm-6 col-md-6 col-lg-6">¿Con que frecuencia bajas documentos desde tu dispositivo?</h2>
+                 <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label><input type="radio" id="xDiaDocuments{{usuario.id}}" name="tiempoDocuments{{usuario.id}}">Por dia</label>
+                </div>
+                <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label><input type="radio" id="xSemanaDocuments{{usuario.id}}" name="tiempoDocuments{{usuario.id}}">Por semana</label>
+                </div>
+                <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label><input type="radio" id="xMesDocuments{{usuario.id}}" name="tiempoDocuments{{usuario.id}}">Por mes</label>
+                </div>
+              </div>
              <div id="documents-slide{{usuario.id}}"></div>
+             <div class="row">
+                  <h2 class="col-xs-5 col-sm-5 col-md-5 col-lg-5">0</h2>
+                  <h2 class="maxValue2 col-xs-5 col-sm-5 col-md-5 col-lg-5">10</h2>
+                </div>
 
-             <h2>¿Cuantos correos envias diariamente?</h2>
+             <div class="row">
+               <h2 class="col-xs-6 col-sm-6 col-md-6 col-lg-6">¿Cuantos correos envias diariamente?</h2>
+                <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label><input type="radio" id="xDiaEmail{{usuario.id}}" name="tiempoEmail{{usuario.id}}">Por dia</label>
+                </div>
+                <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label><input type="radio" id="xSemanaEmail{{usuario.id}}" name="tiempoEmail{{usuario.id}}">Por semana</label>
+                </div>
+                <div class="radio col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label><input type="radio" id="xMesEmail{{usuario.id}}" name="tiempoEmail{{usuario.id}}">Por mes</label>
+                </div>
+             </div>
              <div class="inputEmail">
              <div id="email-slide{{usuario.id}}"></div>
+             <div class="row">
+                  <h2 class="col-xs-5 col-sm-5 col-md-5 col-lg-5">0</h2>
+                  <h2 class="maxValue2 col-xs-5 col-sm-5 col-md-5 col-lg-5">1000</h2>
+                </div>
              </div>
             
           </div>
@@ -125,10 +179,14 @@
 
           <div class="item">
           <div class="inputs">
-          <h2>Cuanto tiempo pasas navegando en internet?</h2>
+          <h2>¿Cuanto tiempo pasas navegando en internet?</h2>
           </div>
           <div class="internetInput col-xs-10 col-sm-10 col-md-7 col-lg-7">
-           <div class="internet-slider" id="internet-slide{{usuario.id}}"></div>
+           <div id="internet-steppe{{usuario.id}}">
+                    <button data-input-stepper-decrease>-</button>
+                    <input  id="internet-stepper{{usuario.id}}"  type="text"  readonly >
+                    <button data-input-stepper-increase>+</button>
+                 </div>
           </div>
           </div>
          
@@ -172,7 +230,7 @@
           <p class="textoFooter">25MB por video</p>
           <p class="textoFooter">300MB por software/actualizacion</p>
           <p class="textoFooter">3MB por doc</p>
-          <p class="textoFooter">6MB por cancion</p>
+          <p class="textoFooter">7MB por cancion</p>
           <p class="textoFooter">1.45MB por pagina</p>
           <p class="textoFooter">0.05KB por mail</p>
           </div>
