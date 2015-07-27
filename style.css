@@ -67,13 +67,24 @@ color:#1d559c;
 	margin: 50px;
 }
 
-.inputEmail{
-	margin-bottom: 95px;
+input.steppers {
+   
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    font-size:17px; 
+
 }
 
 .internetInput{
-	margin-left:10px;
-	margin-bottom: 285px;  
+	margin-left:150px;
+	margin-right:75px; 
+	margin-bottom: 103px; 
+	float: right; 
+}
+
+.internetPregunta{
+ float: right;
 }
 
 .itemPosition
@@ -85,6 +96,18 @@ color:#1d559c;
 
 .inputFotoVideo{
 	margin-left: 50px;
+}
+
+.inputEmail{
+	margin-bottom:72px; 
+}
+
+.inputAplications{
+	margin-bottom: 50px;
+}
+
+.inputDocuments{
+	margin-bottom: 50px;
 }
 
 
@@ -140,9 +163,18 @@ h1
     padding-left: 410px;
 }
 
+.outPutSongs{
+	margin-top:7px; 
+	float: right;
+}
+
 
 .planIdeal{
 	margin-top: 10px;
+}
+
+.preguntas{
+	margin-top:40px; 
 }
 
 .progress
@@ -183,7 +215,7 @@ h1
 
 
 .primerasPreguntas{
-	margin-bottom:100px 
+	margin-bottom:50px 
 }
 
 section
@@ -211,7 +243,7 @@ section
 .secFontSize h2
 {
 
-    font-size: 19px;
+    font-size: 17px;
 	font-weight: bold;
 }
 
